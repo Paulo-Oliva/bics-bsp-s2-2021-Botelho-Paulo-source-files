@@ -25,7 +25,7 @@ function getFullText(textSources)
     return textToSum;
 }
 
-// Returns an array of sentences contained in the summary.
+// Returns an array of sentences contained in the summary stripped of the newline char.
 function splitSummary(textSummary)
 {
     let splittedSummary = splitText(textSummary.text);
@@ -44,13 +44,13 @@ function highlightText(arrayOfSentences)
     for (let paragraph of paragraphs)
     {
         // console.log(paragraph.textContent);
-        for (let index = 0; index < splittedSummary.length; index++)
+        for (let index = 0; index < arrayOfSentences.length; index++)
         {
-            let sumSentence = splittedSummary[index];
+            let sumSentence = arrayOfSentences[index];
 
             if (paragraph.textContent.includes(sumSentence))
             {
-                console.log("This paragraphs contains an important sentence. Index: " + index);
+                // console.log("This paragraphs contains an important sentence. Index: " + index);
                 paragraph.innerHTML = paragraph.textContent.replace(sumSentence, "<mark>" + sumSentence + "</mark>");
             }
         }
@@ -59,6 +59,8 @@ function highlightText(arrayOfSentences)
 
 let textSources = getTextSources();
 let textToSum = getFullText(textSources);
+
+// Create a summary of 5 sentences
 let textSummary = summarize(textToSum, 5, 40);
 console.log(textSummary.text);
 
