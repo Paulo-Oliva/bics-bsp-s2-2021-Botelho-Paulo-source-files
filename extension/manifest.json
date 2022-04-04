@@ -15,7 +15,8 @@
     },
     "permissions": [
         "activeTab",
-        "scripting"
+        "scripting",
+        "tabs"
     ],
     "action": {
         "default_icon": {
@@ -24,5 +25,12 @@
             "48": "/images/get_started48.png",
             "128": "/images/get_started128.png"
         }
-    }
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["/lib/summary.js"],
+            "run_at": "document_end"
+        }
+    ]
 }
