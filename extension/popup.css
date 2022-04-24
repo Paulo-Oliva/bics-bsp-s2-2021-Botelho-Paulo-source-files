@@ -1,0 +1,8 @@
+body {
+    width: max-content;
+    text-align: center;
+}
+
+#algorithm_parameters {
+    text-align: right;
+}

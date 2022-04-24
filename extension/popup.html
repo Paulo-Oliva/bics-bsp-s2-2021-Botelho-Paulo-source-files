@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="popup.css">
+    <!-- Dependencies -->
+    <script src="/lib/summary.js"></script>
+    <script src="/lib/pagerank.js"></script>
+    <script src="/lib/textrank.js"></script>
+    <script src="/lib/naiverank.js"></script>
+</head>
+
+<body>
+    <div id="algorithm_selector">
+        <button id="text_rank_button">TextRank</button>
+        <button id="lex_rank_button">LexRank</button>
+        <button id="naive_rank_button">NaiveRank</button>
+    </div>
+    <div id="algorithm_parameters">
+        <!-- <p>
+            Number of Sentences: <input type="text" id="num_sentences">
+        </p>
+        <p>
+            Keywords to factor in: <input type="text" id="keywords">
+        </p> -->
+    </div>
+    <div id="summarize_area">
+        <button id="summary_button">Summarize</button>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
